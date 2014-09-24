@@ -68,7 +68,11 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.bazaarvoice.dropwizard</groupId>
+            <artifactId>dropwizard-configurable-assets-bundle</artifactId>
+            <version>0.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>
