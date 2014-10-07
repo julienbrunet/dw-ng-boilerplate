@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -11,6 +12,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: rgb(75, 75, 75);
 }
 
+.app-font {
+    font-family: 'Pacifico', cursive;
+}
+
 .container-abs {
     display: table;
     position: absolute;
@@ -18,7 +23,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     width: 100%;
 }
 
-.container-align-middle {
+.container-valign-middle {
     display: table-cell;
     vertical-align: middle;
 }
@@ -29,3 +34,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     min-width: 250px;
     text-align:center;
 }
+
+@media (min-width: 400px) {
+    .container-login {
+        margin:0 auto;
+        width:400px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container-login {
+        margin:0 auto;
+        width:96%;
+    }
+}
+
+.navbar-custom {
+    background-color: #323232;
+    color:#ccc;
+}
+

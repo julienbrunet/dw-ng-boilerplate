@@ -5,6 +5,7 @@
                 <div class="panel-body">
                     <form role="form" ng-submit="login()">
                         <center><h2><span class="app-font">Awesome</span></h2></center>
+                        <center><h4>Create an account</h4></center>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -18,11 +19,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><button type="submit" class="btn btn-success btn-block">Sign In</button></div>
-                            <div class="col-xs-6"><a class="btn btn-primary btn-block" ui-sref="public.register" data-ng-click="data.errorLogin = null;">Register</a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12" style="text-align:center;margin-top:15px;"><a style="font-size:0.9em;" href="#/passwordreset">Forgot password?</a></div>
+                            <div class="col-xs-6"><a class="btn btn-primary btn-block" ui-sref="public.login" data-ng-click="data.errorLogin = null;">Return to login</a></div>
+                            <div class="col-xs-6"><button type="submit" class="btn btn-success btn-block">Register</button></div>
                         </div>
                     </form>
                 </div>
