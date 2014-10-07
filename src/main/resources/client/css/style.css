@@ -1,22 +1,31 @@
-h1, h2, h3, h4, h5 {
-    font-family: "Source Sans Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
-    color:#222;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color:#777777;
+    background-color:white;
+    font-size: 16px;
 }
 
-.outer {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: rgb(75, 75, 75);
+}
+
+.container-abs {
     display: table;
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.middle {
+.container-align-middle {
     display: table-cell;
     vertical-align: middle;
 }
 
-.inner {
+.container-404 {
     margin-left: auto;
     margin-right: auto; 
-    width: 250px;
+    min-width: 250px;
+    text-align:center;
 }
