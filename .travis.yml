@@ -1,0 +1,5 @@
+language: java
+install: mvn clean compile install -DskipTests=true
+deploy:
+  provider: heroku
+  api_key: "6d7695a8-ee8f-4b25-ac99-58a8d5c032ec"
