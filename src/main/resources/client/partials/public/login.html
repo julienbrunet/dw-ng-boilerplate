@@ -1,32 +1,39 @@
 <div class="container-abs">
     <div class="container-valign-middle">
         <div class="container-login">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form role="form" ng-submit="login()">
-                        <center><h2><span class="app-font">Awesome</span></h2></center>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input type="email" name="email" id="email" ng-model="email" class="form-control input" placeholder="Email Address" tabindex="4">
-                            </div>
+
+            <div class="panel-body">
+                <form role="form" ng-submit="login()">
+                    <center><h2><span class="app-font">Awesome</span></h2></center>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="email" name="email" id="email" ng-model="email" class="form-control input"
+                                   placeholder="Email Address" tabindex="4">
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                <input type="password" name="password" id="password" ng-model="password" class="form-control input" placeholder="Password" tabindex="5">
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                            <input type="password" name="password" id="password" ng-model="password"
+                                   class="form-control input" placeholder="Password" tabindex="5">
                         </div>
-                        <div class="row">
-                            <div class="col-xs-6"><button type="submit" class="btn btn-success btn-block">Sign In</button></div>
-                            <div class="col-xs-6"><a class="btn btn-primary btn-block" ui-sref="public.register" data-ng-click="data.errorLogin = null;">Register</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button type="submit" class="btn btn-success btn-block">Sign In</button>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-12" style="text-align:center;margin-top:15px;"><a style="font-size:0.9em;" href="#/passwordreset">Forgot password?</a></div>
-                        </div>
-                    </form>
-                </div>
+                        <div class="col-xs-6"><a class="btn btn-primary btn-block" ui-sref="public.register"
+                                                 data-ng-click="data.errorLogin = null;">Register</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align:center;margin-top:15px;"><a style="font-size:0.9em;"
+                                                                                             href="#/passwordreset">Forgot
+                            password?</a></div>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
 </div>
