@@ -1,11 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
 @import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
+html{
+  height: 100%;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
     color:#777777;
     background-color:white;
     font-size: 16px;
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -36,6 +41,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #wrapper {
+    min-height: 100%;
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -48,22 +54,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: -1000;
     position: fixed;
     left: 250px;
     width: 0;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
+    overflow-x:hidden;
     background: #fff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-
-    -webkit-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    -moz-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -72,16 +75,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 #page-content-wrapper {
     width: 100%;
+    min-height: 100%;
     padding: 0;
+    -moz-box-shadow: 10px 0px 25px 0px #656565;
+    -webkit-box-shadow: 10px 0px 25px 0px #656565;
+    -o-box-shadow: 10px 0px 25px 0px #656565;
+    box-shadow: 10px 0px 25px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=25);
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
+
 }
 
 /* Sidebar Styles */
-
 .sidebar-nav {
     width: 250px;
     margin: 0;
@@ -104,10 +113,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     text-decoration: none;
     color: #333;
     background: #f8f8f8;
-
-    -webkit-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    -moz-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
 }
 
 .sidebar-nav li a:active,
@@ -117,10 +122,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .sidebar-brand {
     margin:0 0 23px 0 !important;
-
-    -webkit-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    -moz-box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
-    box-shadow: inset -18px 0px 17px -17px rgba(0,0,0,0.5);
 }
 
 @media(min-width:768px) {
@@ -167,19 +168,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .navbar-custom {
     color:#ccc;
     min-height: 55px;
+    max-height: 55px;
     border-radius:0;
     margin:0 0 23px 0;
+    border-left:none;
+    border-top:none;
+    border-right:none;
+}
+
+.top-nav-item {
+    display:inline;
+    line-height:53px;
+    padding:0 17px;
+    height:100%;
+    overflow:hidden;
+}
+
+.top-nav-separator {
+    min-height:50px;
+    border-right:1px solid rgba(0,0,0,0.05);
 }
 
 #menu-toggle {
+    margin-left:2px;
     font-size:24px;
-    color:rgba(26,37,48,0.8);
-    line-height:55px;
-    padding:13px 18px 13px 18px;
-    border-right:1px solid rgba(77, 87, 127, 0.2);
 }
 
 #menu-toggle:hover {
     cursor:default;
-    color:rgba(26,37,48,1);
 }
