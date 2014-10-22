@@ -1,28 +1,18 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
-@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(fonts.css);
 
-html{
-  height: 100%;
-}
+html, body { height:100%; margin:0; padding:0 }
 
 body {
-    font-family: 'Raleway', sans-serif;
-    color:#777777;
     background-color:white;
-    font-size: 16px;
-    height:100%;
+    font-family: 'robotoregular', sans-serif;
+    color: rgb(119, 119, 119);
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: rgb(75, 75, 75);
-}
-
-.app-font {
-    font-family: 'Gloria Hallelujah', cursive;
+h1, h2, h3, h4, h5, h6 {
 }
 
 .ng-scope {
-    height:100%;
+    height: 100%;
 }
 
 .container-abs {
@@ -45,158 +35,64 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #wrapper {
-    height:100%
-    padding-left: 0;
-    position: relative;
-    top: 0;
+    height: 100%;
 }
 
-#sidebar-wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    color: #fff;
-    max-height: none;
-    min-height: 100%;
-    width: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index:-1000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+#footer, .navbar-custom {
+    background-color:rgba(230,230,230,0.3);
 }
-
-#page-content-wrapper {
-    float: right;
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-
-    -moz-box-shadow: 10px 0px 25px 0px #656565;
-    -webkit-box-shadow: 10px 0px 25px 0px #656565;
-    -o-box-shadow: 10px 0px 25px 0px #656565;
-    box-shadow: 10px 0px 25px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=25);
-
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    width: calc(100% - 250px);
-}
-#wrapper.toggled #sidebar-wrapper {
-    width:250px;
-}
-
-.menu-collapse {
-     border-right: 1px solid rgba(0, 0, 0, 0.05);
-     height: 100%;
-     min-height: 100%;
-     padding:0 17px;
-     display:inline;
-}
-
-@media(min-width:768px) {
-    #sidebar-wrapper {
-        width:250px;
-    }
-
-    #page-content-wrapper {
-        width: calc(100% - 250px);
-    }
-
-    .menu-collapse {
-        display:none;
-    }
+#footer, .navbar-custom, .nav-button {
+    border:1px solid rgba(230,230,230,0.6);
 }
 
 .navbar-custom {
-    color:#ccc;
-    min-height: 55px;
-    max-height: 55px;
+    min-height: 56px;
+    max-height: 56px;
     border-radius:0;
     margin:0;
     border-left:none;
     border-top:none;
     border-right:none;
-    background-color:rgba(230,230,230,0.3);
     box-shadow: none;
-    border-bottom:1px solid rgba(230,230,230,0.5);
 }
 
-/* Sidebar Styles */
-.sidebar-nav {
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.nav-button {
+    font-size:22px;
+    height: 56px;
+    line-height: 56px;
+    margin:0;
+    padding:0 15px 0 16px;
+    display: inline-block;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
 }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #333;
-    background: #f8f8f8;
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-brand {
-    margin:0 0 23px 0 !important;
-}
-
-
-
-@media (min-width: 400px) {
-    .container-login {
-        margin:0 auto;
-        width:400px;
+@media(min-width:768px) {
+    .nav-button {
+        display: none;
     }
 }
 
-@media (max-width: 400px) {
-    .container-login {
-        margin:0 auto;
-        width:96%;
-    }
+#content {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: -56px auto -56px;
+    padding: 16px;
 }
 
 
-
-#menu-toggle {
-    margin-left:2px;
-    font-size:24px;
-}
-
-#menu-toggle:hover {
-    cursor:default;
+#footer-push, #header-push {
+    clear: both;
+    height: 56px;
 }
 
 #footer {
-    border-top: 1px solid #e7e7ec;
-    bottom:0;
     clear: both;
-    font-size: 12px;
-    height: 59px;
-    padding-bottom: 8px;
-    padding-top: 16px;
-    position: relative;
+    height: 56px;
+    padding:0 16px;
+    border-left:none;
+    border-bottom:none;
+    border-right:none;
 }
