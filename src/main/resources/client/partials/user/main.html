@@ -8,14 +8,26 @@
             Hello You !
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius.</p>
-        <ul>
-            <li>Menu Item 1</li>
-            <li>Menu Item 2</li>
-            <li>Menu Item 3</li>
-            <li>Menu Item 4</li>
-            <li>Menu Item 5</li>
-        </ul>
+        <div id="sidebar-content-wrapper">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius.</p>
+            <ul id="menu-list">
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="user.home">
+                        <span class="icon"><i class="fa fa-home"></i></span>Welcome
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="user.chat">
+                        <span class="icon"><i class="fa fa-comments-o"></i></span>Chat
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="admin.admin">
+                        <span class="icon"><i class="fa fa-cogs"></i></span>Administration
+                    </a>
+                </li>
+            </ul>
+        </div>
         <hr class="clear" />
     </div>
     <div id="wrapper">
