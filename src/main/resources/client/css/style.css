@@ -36,6 +36,15 @@ h1, h2, h3, h4, h5, h6 {
 
 #wrapper {
     height: 100%;
+    float:right;
+}
+
+#sidebar-wrapper {
+    height: 100%
+    float:left;
+    position: fixed;
+    width: 260px;
+    margin-left: -260px;
 }
 
 #footer, .navbar-custom {
@@ -71,6 +80,14 @@ h1, h2, h3, h4, h5, h6 {
 @media(min-width:768px) {
     .nav-button {
         display: none;
+    }
+
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #wrapper {
+        margin-left:260px;
     }
 }
 
