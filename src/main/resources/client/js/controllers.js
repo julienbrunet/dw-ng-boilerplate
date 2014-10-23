@@ -10,13 +10,11 @@ ctrl.controller('SessionCtrl',
 
  }]);
 
-    ctrl.controller('MainCtrl',
+ctrl.controller('MainCtrl',
                 ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', 'Auth',
                 function ($rootScope, $scope, $http, $location, $log, $cookieStore, authSrv) {
+
     $log.debug("MainCtrl");
-
-
-
 }]);
 
 
