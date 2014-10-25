@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0px;
 }
 
-@media(min-width:768px) {
+@media(min-width:1024px) {
     .nav-button, .nav-button-close {
         display: none;
     }
