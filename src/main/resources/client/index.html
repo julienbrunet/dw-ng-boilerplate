@@ -16,10 +16,10 @@
 </head>
 <body>
 
-<div id="main-container" ng-init="menuVisible=false" ng-class="{menuvisible: menuVisible}">
+<div id="main-container" ng-init="$rootScope.menuVisible=false" ng-class="{menuvisible: $rootScope.menuVisible}">
     <div id="sidebar-wrapper">
         <div class="nav navbar navbar-default navbar-custom">
-            <div id="close-menu" class="nav-button-close" ng-click="menuVisible = false">
+            <div id="close-menu" class="nav-button-close" ng-click="$rootScope.menuVisible = false">
                 <i class="fa fa-times">&nbsp;</i>
             </div>
             <div class="app-title">
