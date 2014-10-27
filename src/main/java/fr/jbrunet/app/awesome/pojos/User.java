@@ -1,4 +1,4 @@
-package fr.jbrunet.app.awesome.pojo.User;
+package fr.jbrunet.app.awesome.pojos;
 
 import org.hibernate.validator.constraints.Length;
 

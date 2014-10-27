@@ -16,18 +16,59 @@
 </head>
 <body>
 
-    <div ui-view></div>
+<div id="main-container" ng-init="menuVisible=false" ng-class="{menuvisible: menuVisible}">
+    <div id="sidebar-wrapper">
+        <div class="nav navbar navbar-default navbar-custom">
+            <div id="close-menu" class="nav-button-close" ng-click="menuVisible = false">
+                <i class="fa fa-times">&nbsp;</i>
+            </div>
+            <div class="app-title">
+                Hello You !
+            </div>
+        </div>
+        <div id="sidebar-content-wrapper">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius.</p>
+            <ul id="menu-list">
+                <li class="menu-list-item">
+                    <a class="link active" ui-sref="user.home">
+                        <span class="icon"><i class="fa fa-home"></i></span>Welcome
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="user.crud">
+                        <span class="icon"><i class="fa fa-file-o"></i></span>CRUD Example
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="user.chat">
+                        <span class="icon"><i class="fa fa-comments-o"></i></span>Chat
+                    </a>
+                </li>
+                <li class="menu-list-item">
+                    <a class="link" ui-sref="admin.admin">
+                        <span class="icon"><i class="fa fa-cogs"></i></span>Administration
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr class="clear" />
+    </div>
+    <div id="wrapper">
+        <div ui-view></div>
+    </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-cookies.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.js"></script>
-    <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-    <script src="js/lib/ui-bootstrap-0.11.2.js"></script>
+</div>
 
-    <script src="js/application.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.js"></script>
+<script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="js/lib/ui-bootstrap-0.11.2.js"></script>
+
+<script src="js/application.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
 
 </body>
 </html>

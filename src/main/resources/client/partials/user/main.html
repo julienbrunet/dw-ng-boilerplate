@@ -1,60 +1,28 @@
-<div ng-init="menuVisible=false" ng-class="{menuvisible: menuVisible}">
-    <div id="sidebar-wrapper">
-        <div class="nav navbar navbar-default navbar-custom">
-            <div id="close-menu" class="nav-button-close" ng-click="menuVisible = false">
-                <i class="fa fa-times">&nbsp;</i>
-            </div>
-            <div class="app-title">
-            Hello You !
-            </div>
-        </div>
-        <div id="sidebar-content-wrapper">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius.</p>
-            <ul id="menu-list">
-                <li class="menu-list-item">
-                    <a class="link active" ui-sref="user.home">
-                        <span class="icon"><i class="fa fa-home"></i></span>Welcome
-                    </a>
-                </li>
-                <li class="menu-list-item">
-                    <a class="link" ui-sref="user.chat">
-                        <span class="icon"><i class="fa fa-comments-o"></i></span>Chat
-                    </a>
-                </li>
-                <li class="menu-list-item">
-                    <a class="link" ui-sref="admin.admin">
-                        <span class="icon"><i class="fa fa-cogs"></i></span>Administration
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <hr class="clear" />
+<div class="nav navbar navbar-default navbar-custom">
+    <div id="open-menu" class="nav-button" ng-click="menuVisible = true">
+        <i class="fa fa-bars">&nbsp;</i>
     </div>
-    <div id="wrapper">
-        <div class="nav navbar navbar-default navbar-custom">
-            <div id="open-menu" class="nav-button" ng-click="menuVisible = true">
-                <i class="fa fa-bars">&nbsp;</i>
-            </div>
-        </div>
-        <div id="content">
-            <div id="header-push"></div>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius. Aliquam convallis felis quam, non molestie tortor fermentum in. Praesent convallis cursus lacus. Etiam quis eleifend justo. Donec pellentesque porttitor libero porttitor dapibus. Aenean ut sapien ac mi bibendum rhoncus et eu ipsum. Pellentesque at justo sed lacus tempus consectetur. Vivamus eu orci id odio rhoncus elementum eget ac nulla. Mauris vitae neque vel neque eleifend faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec imperdiet elit a enim cursus faucibus.</p>
-
-            <h1>h1 heading</h1>
-            <h2>h2 heading</h2>
-            <h3>h3 heading</h3>
-            <h4>h4 heading</h4>
-            <h5>h5 heading</h5>
-            <h6>h6 heading</h6>
-
-            <p>Pellentesque pharetra nulla nec justo lacinia sollicitudin. Ut sit amet aliquet enim. Sed ornare luctus arcu nec laoreet. Nulla facilisi. Duis ut nisl quis nisl fringilla laoreet ut sed augue. Donec pharetra ante purus, non condimentum nulla semper eget.</p>
-
-            <div id="footer-push"></div>
-        </div>
-        <div id="footer">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
-    </div>
-
 </div>
+<div id="content">
+    <div id="header-push"></div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non condimentum quam. Aenean euismod ut urna id varius. Aliquam convallis felis quam, non molestie tortor fermentum in. Praesent convallis cursus lacus. Etiam quis eleifend justo. Donec pellentesque porttitor libero porttitor dapibus. Aenean ut sapien ac mi bibendum rhoncus et eu ipsum. Pellentesque at justo sed lacus tempus consectetur. Vivamus eu orci id odio rhoncus elementum eget ac nulla. Mauris vitae neque vel neque eleifend faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec imperdiet elit a enim cursus faucibus.</p>
+
+    <h1>h1 heading</h1>
+    <h2>h2 heading</h2>
+    <h3>h3 heading</h3>
+    <h4>h4 heading</h4>
+    <h5>h5 heading</h5>
+    <h6>h6 heading</h6>
+
+    <p>Pellentesque pharetra nulla nec justo lacinia sollicitudin. Ut sit amet aliquet enim. Sed ornare luctus arcu nec laoreet. Nulla facilisi. Duis ut nisl quis nisl fringilla laoreet ut sed augue. Donec pharetra ante purus, non condimentum nulla semper eget.</p>
+
+
+    <div id="footer-push"></div>
+</div>
+<div id="footer">
+    <div ng-include="'partials/user/footer.html'"></div>
+</div>
+
+
+

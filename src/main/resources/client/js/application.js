@@ -61,19 +61,32 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
     // Regular user routes
     $stateProvider
         .state('user', {
-            abstract: true,
-            template: "<ui-view/>"
+            abstract:       true,
+            template:       "<ui-view/>",
+            controller:     "MainCtrl"
         })
         .state("user.home", {
-            url: "/",
+            url:            "/",
             templateUrl:    "partials/user/main.html",
-            controller:     "MainCtrl",
+            controller:     "",
+            access:         access.user
+        })
+        .state("user.crud", {
+            url:            "/crud",
+            templateUrl:    "partials/user/crud.html",
+            controller:     "",
+            access:         access.user
+        })
+        .state("user.chat", {
+            url:            "/crud",
+            templateUrl:    "partials/user/chat.html",
+            controller:     "",
             access:         access.user
         })
         .state("user.profile", {
-            url: "/profile",
-            templateUrl: "partials/user/profile.html",
-            controller: "ProfileCtrl",
+            url:            "/profile",
+            templateUrl:    "partials/user/profile.html",
+                controller: "",
             access:         access.user
         });
 

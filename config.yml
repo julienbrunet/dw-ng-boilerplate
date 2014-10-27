@@ -5,3 +5,10 @@ server:
   connector:
     type: http
     port: 8080
+
+# Database settings.
+database:
+  driverClass: org.h2.Driver
+  user: myapp
+  password: myapp
+  url: jdbc:h2:./database
