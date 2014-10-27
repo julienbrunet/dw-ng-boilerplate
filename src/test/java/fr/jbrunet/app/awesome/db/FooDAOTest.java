@@ -23,7 +23,7 @@ public class FooDAOTest {
     public void setup() {
         //dbi = new DBI("jdbc:h2:./database" + UUID.randomUUID());
         dbi = new DBI("jdbc:h2:mem:" + UUID.randomUUID());
-        dbi.setSQLLog(new PrintStreamLog(System.out));
+        //dbi.setSQLLog(new PrintStreamLog(System.out));
         foo = dbi.open(FooDAO.class);
         foo.createTable();
     }
@@ -34,15 +34,20 @@ public class FooDAOTest {
     }
 
     @Test
-    public void FooCRUD() {
-
+    public void FooCreateAndSearchById() {
         //Create
-        Long id = foo.create(new Foo(null, "label", "description", new Date(), false));
-        Assert.assertNotNull(id);
+        Long id1 = foo.create(new Foo(null, "foo1", "description", new Date(), false));
+        Assert.assertNotNull(id1);
+        Long id2 = foo.create(new Foo(null, "foo2", "description", new Date(), false));
+        Assert.assertNotNull(id2);
 
         //Read
-        Foo f = foo.searchById(id);
-        Assert.assertNotNull(f);
-        Assert.assertEquals(f.getLabel(), "label");
+        Foo f1 = foo.searchById(id1);
+        Assert.assertNotNull(f1);
+        Assert.assertEquals(f1.getLabel(), "foo1");
+
+        Foo f2 = foo.searchById(id2);
+        Assert.assertNotNull(f2);
+        Assert.assertEquals(f2.getLabel(), "foo2");
     }
 }
