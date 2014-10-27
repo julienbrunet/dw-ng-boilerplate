@@ -34,7 +34,6 @@ public abstract class FooDAO {
     @SqlQuery("SELECT id, label, description, date, bool FROM foo WHERE id=:id LIMIT 1")
     public abstract Foo searchById(@Bind("id") Long id);
 
-
     //TODO UPDATE, DELETE
 
     @SqlQuery(
