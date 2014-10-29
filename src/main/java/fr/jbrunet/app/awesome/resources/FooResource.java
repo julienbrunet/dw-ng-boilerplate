@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -27,14 +28,40 @@ public class FooResource {
 
     @GET
     @Timed
-    public List<Foo> search(@QueryParam("id") String id,
-                         @QueryParam("label") String label,
-                         @QueryParam("description") String description,
-                         @QueryParam("date") Date date,
-                         @QueryParam("bool") Boolean bool,
-                         @QueryParam("offset") int offset,
-                         @QueryParam("limit") int limit) {
-        //TODO
-        return null;
+    public List<Foo> search(
+            @QueryParam("id") Long id,
+            @QueryParam("label") String label,
+            @QueryParam("description") String description,
+            @QueryParam("date") Date date,
+            @QueryParam("bool") Boolean bool,
+            @QueryParam("orderBy") List<String> orderBy,
+            @QueryParam("orderDirection") String orderDirection,
+            @QueryParam("page") Integer page,
+            @QueryParam("pageSize") Integer pageSize) {
+
+        boolean desc = false;
+        if(orderDirection!=null&&orderDirection.equals("DESC")) desc = true;
+
+        String[] order = null;
+        if(orderBy!=null && orderBy.size()>0) {
+            order = new String[]{};
+            int i=0;
+            for (Iterator<String> iterator = orderBy.iterator(); iterator.hasNext(); ) {
+                String next = iterator.next();
+                order[i]= next;
+                i++;
+            }
+        }
+
+        int limit = -1;
+        if(pageSize!=null) limit = pageSize.intValue();
+
+        int offset = 0;
+        if(page!=null) {
+            if(limit > 0) offset = page.intValue()*limit;
+            else offset = page.intValue();
+        }
+
+        return fooDAO.search(id, label, description, date, bool, offset, limit, order, new Boolean(desc));
     }
 }

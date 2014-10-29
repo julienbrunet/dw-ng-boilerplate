@@ -76,7 +76,8 @@ public abstract class FooDAO extends AbstractDAO<Foo> {
                                 Boolean bool,
                                 int offset,
                                 int pageSize,
-                                String ... orderBy) {
+                                String[] orderBy,
+                                Boolean orderByDesc) {
 
         //Build select clause
         StringBuffer select = getSelectClause(TABLE_NAME, COLUMNS);
@@ -92,7 +93,7 @@ public abstract class FooDAO extends AbstractDAO<Foo> {
 
         //Build order clause
         StringBuffer order = new StringBuffer();
-        if(orderBy!=null && orderBy.length>0) {
+        if(orderBy!=null && orderBy.length>0 && orderByDesc!=null) {
             order.append("ORDER BY ");
             for (int i = 0; i < orderBy.length; i++) {
                 String orderCol = orderBy[i];
@@ -101,9 +102,12 @@ public abstract class FooDAO extends AbstractDAO<Foo> {
                 if(i!=orderBy.length-1) select.append(",");
                 order.append(" ");
             }
+
+            if(orderByDesc) order.append("DESC ");
+            else order.append("ASC ");
         }
 
-        String query = select.append(where).append(order).append(" LIMIT "+pageSize+"OFFSET "+offset+" ").toString();
+        String query = select.append(where).append(order).append(" LIMIT "+pageSize+" OFFSET "+offset+" ").toString();
         Handle h = getHandle();
         Query<Map<String, Object>> q = h.createQuery(query);
         Query<Foo> q2 = q.map(new FooMapper());
