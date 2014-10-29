@@ -6,7 +6,9 @@ import fr.jbrunet.app.awesome.resources.FooResource;
 import fr.jbrunet.app.awesome.resources.TestResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
+import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.jdbi.DBIFactory;
+import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.skife.jdbi.v2.DBI;
@@ -24,6 +26,13 @@ public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
     @Override
     public void initialize(Bootstrap<AwesomeAppConfiguration> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/client/", "/", "index.html"));
+
+        bootstrap.addBundle(new MigrationsBundle<AwesomeAppConfiguration>() {
+            @Override
+            public DataSourceFactory getDataSourceFactory(AwesomeAppConfiguration configuration) {
+                return configuration.getDataSourceFactory();
+            }
+        });
 
     }
 
