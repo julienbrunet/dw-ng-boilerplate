@@ -17,6 +17,22 @@ ctrl.controller('MainCtrl',
     $log.debug("MainCtrl");
 }]);
 
+ctrl.controller('CrudCtrl',
+                ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', 'Auth',
+                function ($rootScope, $scope, $http, $location, $log, $cookieStore, authSrv) {
+    $log.debug("CrudCtrl");
+
+    $http.get('api/foo')
+    .then(function(response){
+        $scope.foos=response.data;
+        $log.info(response);
+    }, function (response){
+        $scope.error=response.data;
+    });
+
+}]);
+
+
 
 
 

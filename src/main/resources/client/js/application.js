@@ -74,7 +74,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         .state("user.crud", {
             url:            "/crud",
             templateUrl:    "partials/user/crud.html",
-            controller:     "",
+            controller:     "CrudCtrl",
             access:         access.user
         })
         .state("user.chat", {

@@ -215,3 +215,20 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom:none;
     border-right:none;
 }
+
+.screen-title {
+    display:inline-block;
+    margin-left:16px;
+    font-size:20px;
+    height: 56px;
+    line-height: 56px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+     border-top: none;
+ }
