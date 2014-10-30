@@ -224,11 +224,64 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 56px;
 }
 
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-     border-top: none;
- }
+ul.resp-list {
+    width:100%;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+li.resp-list-item {
+    margin:0;
+    padding:8px 0;
+
+}
+
+li.resp-list-item .left-block {
+    margin:0;
+    padding:0;
+    display:inline-block;
+    height:48px;
+    line-height:48px;
+    width:48px;
+    max-width:48px;
+    font-size:18px;
+    font-weight:thin;
+    text-align:center;
+}
+
+li.resp-list-item .left-block .foo-id {
+    background-color:#2196f3;;
+    color:white;
+    border-radius:48px;
+}
+
+li.resp-list-item .content-block {
+    margin:0;
+    padding:0;
+    margin-left:16px;
+    width:350px;
+    display:inline-block;
+}
+
+li.resp-list-item .content-block .primary-content-block {
+    margin:0;
+    padding:0;
+    display:block;
+}
+li.resp-list-item .content-block .secondary-content-block {
+    margin:0;
+    padding:0;
+    color:rgba(230,230,230,1);
+    display:block;
+}
+
+li.resp-list-item .right-block {
+    margin:0;
+    padding:0;
+    display:inline-block;
+    width:112px;
+    max-width:112px;
+    height:100%;
+}
+

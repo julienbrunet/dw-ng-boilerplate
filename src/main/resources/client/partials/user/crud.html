@@ -6,26 +6,16 @@
 </div>
 <div id="content">
     <div id="header-push"></div>
-        <table class="table table-hover" >
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Label</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Bool</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="foo in foos">
-                    <td>{{foo.id}}</td>
-                    <td>{{foo.label}}</td>
-                    <td>{{foo.description}}</td>
-                    <td>{{foo.date}}</td>
-                    <td>{{foo.bool}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <ul class="resp-list">
+        <li class="resp-list-item" ng-repeat="foo in foos">
+            <div class="left-block"><div class="foo-id">#{{foo.id}}</div></div>
+            <div class="content-block">
+                <div class="primary-content-block">{{foo.label}}</div>
+                <div class="secondary-content-block">{{foo.description}}</div>
+            </div>
+            <div class="right-block">{{foo.date}}</div>
+        </li>
+    </ul>
     <div id="footer-push"></div>
 </div>
 <div id="footer">
