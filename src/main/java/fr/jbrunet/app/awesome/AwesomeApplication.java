@@ -25,7 +25,7 @@ public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
     @Override
     public void initialize(Bootstrap<AwesomeAppConfiguration> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/client/", "/", "index.html"));
-
+        //bootstrap.addBundle(new AssetsBundle());
         bootstrap.addBundle(new MigrationsBundle<AwesomeAppConfiguration>() {
             @Override
             public DataSourceFactory getDataSourceFactory(AwesomeAppConfiguration configuration) {
@@ -40,7 +40,6 @@ public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, awesomeAppConfiguration.getDataSourceFactory(), "appDatabase");
 
-        environment.jersey().setUrlPattern("/api/*");
         environment.jersey().register(new FooResource(jdbi.onDemand(FooDAO.class)));
 
     }
