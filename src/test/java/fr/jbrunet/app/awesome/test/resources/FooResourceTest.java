@@ -1,4 +1,4 @@
-package fr.jbrunet.app.awesome.resource;
+package fr.jbrunet.app.awesome.test.resources;
 
 import fr.jbrunet.app.awesome.db.FooDAO;
 import fr.jbrunet.app.awesome.pojos.Foo;

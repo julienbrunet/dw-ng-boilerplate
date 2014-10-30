@@ -3,7 +3,6 @@ package fr.jbrunet.app.awesome;
 import fr.jbrunet.app.awesome.config.AwesomeAppConfiguration;
 import fr.jbrunet.app.awesome.db.FooDAO;
 import fr.jbrunet.app.awesome.resources.FooResource;
-import fr.jbrunet.app.awesome.resources.TestResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
@@ -42,7 +41,6 @@ public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
         final DBI jdbi = factory.build(environment, awesomeAppConfiguration.getDataSourceFactory(), "appDatabase");
 
         environment.jersey().setUrlPattern("/api/*");
-        environment.jersey().register(new TestResource());
         environment.jersey().register(new FooResource(jdbi.onDemand(FooDAO.class)));
 
     }

@@ -1,5 +1,6 @@
-package fr.jbrunet.app.awesome.db;
+package fr.jbrunet.app.awesome.test.db;
 
+import fr.jbrunet.app.awesome.db.FooDAO;
 import fr.jbrunet.app.awesome.pojos.Foo;
 import org.junit.After;
 import org.junit.Assert;
@@ -34,7 +35,7 @@ public class FooDAOTest {
     }
 
     private void create20Foos() {
-        List<Foo> foos = new ArrayList();
+        List<Foo> foos = new ArrayList<Foo>();
         foos.add(new Foo(null, "foo1",  "description", new Date(), false));
         foos.add(new Foo(null, "foo2",  "description", new Date(), true));
         foos.add(new Foo(null, "foo3",  "description", new Date(), false));
@@ -128,6 +129,6 @@ public class FooDAOTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void SearchWithWrongArg() {
-        List<Foo> results = dao.search(null, "foo", null, null, null, 0, -1, new String[]{"UNEXISTING_COLUMN"}, false);
+        dao.search(null, "foo", null, null, null, 0, -1, new String[]{"UNEXISTING_COLUMN"}, false);
     }
 }
