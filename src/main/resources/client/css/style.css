@@ -218,7 +218,7 @@ ul.resp-list {
 li.resp-list-item {
     margin:0;
     padding:16px;
-    width:calc(100% - (16px * 2));
+    width:100%;
     overflow:hidden;
 }
 
