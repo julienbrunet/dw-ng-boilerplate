@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto !important;
     height: 100%;
     margin: -56px auto -56px;
-    padding: 16px;
+    padding: 16px 0;
 }
 
 .clear { clear: both; visibility:hidden; overflow: auto;}
@@ -233,14 +233,18 @@ ul.resp-list {
 
 li.resp-list-item {
     margin:0;
-    padding:8px 0;
+    padding:16px;
+    width:100%;
+}
 
+li.resp-list-item:hover {
+    background-color:rgba(230,230,230,0.3);
 }
 
 li.resp-list-item .left-block {
+    float:left;
     margin:0;
     padding:0;
-    display:inline-block;
     height:48px;
     line-height:48px;
     width:48px;
@@ -251,37 +255,54 @@ li.resp-list-item .left-block {
 }
 
 li.resp-list-item .left-block .foo-id {
-    background-color:#2196f3;;
+    background-color:#2196f3;
     color:white;
     border-radius:48px;
+    font-family: 'robotothin', sans-serif;
 }
 
 li.resp-list-item .content-block {
     margin:0;
     padding:0;
-    margin-left:16px;
-    width:350px;
-    display:inline-block;
+    margin-left:calc(48px + 16px);
+    margin-right:calc(96px + 16px);
+    overflow:hidden;
 }
 
 li.resp-list-item .content-block .primary-content-block {
     margin:0;
     padding:0;
-    display:block;
 }
 li.resp-list-item .content-block .secondary-content-block {
     margin:0;
     padding:0;
     color:rgba(230,230,230,1);
-    display:block;
 }
 
 li.resp-list-item .right-block {
     margin:0;
     padding:0;
-    display:inline-block;
-    width:112px;
-    max-width:112px;
+    width:90px;
+    max-width:90px;
     height:100%;
+    float:right;
+}
+
+.date-block {
+}
+
+.date-block .day {
+    font-size:21px;
+    line-height:16px;
+}
+
+.date-block .month {
+    font-size:14px;
+    line-height:14px;
+}
+
+.date-block .year {
+    font-size:11px;
+    line-height:14px;
 }
 
