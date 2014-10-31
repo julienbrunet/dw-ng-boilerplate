@@ -218,7 +218,8 @@ ul.resp-list {
 li.resp-list-item {
     margin:0;
     padding:16px;
-    width:100%;
+    width:calc(100% - (16px * 2));
+    overflow:hidden;
 }
 
 li.resp-list-item:hover {
@@ -266,13 +267,13 @@ li.resp-list-item .content-block .secondary-content-block {
 li.resp-list-item .right-block {
     margin:0;
     padding:0;
-    width:90px;
-    max-width:90px;
+    width:24px;
     height:100%;
     float:right;
 }
 
 .date-block {
+    text-align:right;
 }
 
 .date-block .day {
@@ -311,7 +312,7 @@ li.resp-list-item .right-block {
     li.resp-list-item {
         margin-right:16px;
         margin-bottom:16px;
-        width:350px;
+        width:330px;
         border:1px solid #EEE;
         display:inline-block;
     }
