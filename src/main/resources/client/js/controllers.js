@@ -22,7 +22,7 @@ ctrl.controller('CrudCtrl',
                 function ($rootScope, $scope, $http, $location, $log, $cookieStore, authSrv) {
     $log.debug("CrudCtrl");
 
-    $http.get('api/foo')
+    $http.get('api/foo?pageSize=50')
     .then(function(response){
         $scope.foos=response.data;
         $log.info(response);
