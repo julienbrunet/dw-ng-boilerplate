@@ -291,7 +291,7 @@ li.resp-list-item .right-block {
     line-height:14px;
 }
 
-@media(min-width:768px) {
+@media(min-width:1024px) {
     .nav-button, .nav-button-close {
         display: none;
     }
