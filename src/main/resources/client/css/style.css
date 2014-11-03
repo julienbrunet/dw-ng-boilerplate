@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     width: 260px;
     margin-left: -260px;
+    margin-top:56px;
     z-index: 1100;
     background: white;
     border-left:none;
@@ -121,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer, .navbar-custom {
-    background-color:rgba(230,230,230,0.3);
+    background-color:rgba(250,250,250,1);
 }
 
 .navbar-custom {
@@ -133,6 +134,13 @@ h1, h2, h3, h4, h5, h6 {
     border-top:none;
     border-right:none;
     box-shadow: none;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+
+.navbar-sidebar {
+    width:259px;
 }
 
 .nav-button {
@@ -174,14 +182,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0px;
 }
 
-
-
 #content {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: -56px auto -56px;
-    padding: 16px 0;
+    margin: 0 auto -56px;
+    padding: 0;
 }
 
 .clear { clear: both; visibility:hidden; overflow: auto;}
@@ -206,6 +212,20 @@ h1, h2, h3, h4, h5, h6 {
     font-size:20px;
     height: 56px;
     line-height: 56px;
+}
+
+.crud-list-wrapper {
+    float:left;
+    width:450px;
+    border-right:1px solid rgba(230,230,230,0.3);
+}
+
+.crud-detail-wrapper {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    margin-left:450px;
+    position:fixed;
 }
 
 ul.resp-list {
@@ -305,9 +325,12 @@ li.resp-list-item .right-block {
         margin-left:260px;
     }
 
+    /*
     #content {
         padding:16px;
     }
+
+
 
     li.resp-list-item {
         margin-right:16px;
@@ -316,5 +339,6 @@ li.resp-list-item .right-block {
         border:1px solid #EEE;
         display:inline-block;
     }
+    */
 }
 

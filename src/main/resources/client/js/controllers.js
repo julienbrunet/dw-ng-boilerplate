@@ -25,10 +25,14 @@ ctrl.controller('CrudCtrl',
     $http.get('api/foo?pageSize=50')
     .then(function(response){
         $scope.foos=response.data;
-        $log.info(response);
+        $scope.selectedFoo=$scope.foos[0];
     }, function (response){
         $scope.error=response.data;
     });
+
+    $scope.displayDetails = function(foo) {
+        $scope.selectedFoo = foo;
+    };
 
 }]);
 

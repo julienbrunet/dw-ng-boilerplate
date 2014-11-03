@@ -6,22 +6,27 @@
 </div>
 <div id="content">
     <div id="header-push"></div>
-    <ul class="resp-list">
-        <li class="resp-list-item" ng-repeat="foo in foos">
-            <div class="left-block"><div class="foo-id">#{{foo.id}}</div></div>
-            <div class="right-block">
-                <div class="date-block">
-                    <div class="day">{{foo.date | date: 'dd'}}</div>
-                    <div class="month">{{foo.date | date: 'MMM'}}</div>
-                    <div class="year">{{foo.date | date: 'yyyy'}}</div>
+    <div class="crud-list-wrapper">
+        <ul class="resp-list">
+            <li class="resp-list-item" ng-repeat="foo in foos" ng-click="displayDetails(foo)" >
+                <div class="left-block"><div class="foo-id">#{{foo.id}}</div></div>
+                <div class="right-block">
+                    <div class="date-block">
+                        <div class="day">{{foo.date | date: 'dd'}}</div>
+                        <div class="month">{{foo.date | date: 'MMM'}}</div>
+                        <div class="year">{{foo.date | date: 'yyyy'}}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="content-block">
-                <div class="primary-content-block">{{foo.label}}</div>
-                <div class="secondary-content-block">{{foo.description}}</div>
-            </div>
-        </li>
-    </ul>
+                <div class="content-block" ng-click="displayDetails('toto');">
+                    <div class="primary-content-block">{{foo.label}}</div>
+                    <div class="secondary-content-block">{{foo.description}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="crud-detail-wrapper">
+        {{selectedFoo.label}}
+    </div>
     <div id="footer-push"></div>
 </div>
 <div id="footer">
