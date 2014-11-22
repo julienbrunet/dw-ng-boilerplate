@@ -1,4 +1,4 @@
-package fr.jbrunet.app.awesome.config;
+package fr.jbrunet.app.dw.ng.starterkit;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by Julien BRUNET on 23/09/2014.
  */
-public class AwesomeAppConfiguration extends Configuration {
+public class StarterkitAppConfiguration extends Configuration {
 
     @Valid
     @NotNull

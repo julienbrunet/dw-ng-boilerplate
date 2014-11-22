@@ -1,4 +1,4 @@
-package fr.jbrunet.app.awesome.db;
+package fr.jbrunet.app.dw.ng.starterkit.db;
 
 import org.skife.jdbi.v2.sqlobject.mixins.GetHandle;
 

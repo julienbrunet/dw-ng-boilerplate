@@ -1,4 +1,4 @@
-package fr.jbrunet.app.awesome.pojos;
+package fr.jbrunet.app.dw.ng.starterkit.pojos;
 
 import java.util.Date;
 

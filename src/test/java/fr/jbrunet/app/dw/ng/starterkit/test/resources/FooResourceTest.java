@@ -1,8 +1,8 @@
-package fr.jbrunet.app.awesome.test.resources;
+package fr.jbrunet.app.dw.ng.starterkit.test.resources;
 
-import fr.jbrunet.app.awesome.db.FooDAO;
-import fr.jbrunet.app.awesome.pojos.Foo;
-import fr.jbrunet.app.awesome.resources.FooResource;
+import fr.jbrunet.app.dw.ng.starterkit.db.FooDAO;
+import fr.jbrunet.app.dw.ng.starterkit.pojos.Foo;
+import fr.jbrunet.app.dw.ng.starterkit.resources.FooResource;
 import io.dropwizard.testing.junit.DropwizardClientRule;
 import org.junit.Assert;
 import org.junit.Before;

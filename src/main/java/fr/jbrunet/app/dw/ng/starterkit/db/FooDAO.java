@@ -1,7 +1,7 @@
-package fr.jbrunet.app.awesome.db;
+package fr.jbrunet.app.dw.ng.starterkit.db;
 
-import fr.jbrunet.app.awesome.db.mappers.FooMapper;
-import fr.jbrunet.app.awesome.pojos.Foo;
+import fr.jbrunet.app.dw.ng.starterkit.db.mappers.FooMapper;
+import fr.jbrunet.app.dw.ng.starterkit.pojos.Foo;
 import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.Query;
 import org.skife.jdbi.v2.sqlobject.*;

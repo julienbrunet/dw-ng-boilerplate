@@ -1,7 +1,7 @@
-package fr.jbrunet.app.awesome.test.db;
+package fr.jbrunet.app.dw.ng.starterkit.test.db;
 
-import fr.jbrunet.app.awesome.db.FooDAO;
-import fr.jbrunet.app.awesome.pojos.Foo;
+import fr.jbrunet.app.dw.ng.starterkit.db.FooDAO;
+import fr.jbrunet.app.dw.ng.starterkit.pojos.Foo;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

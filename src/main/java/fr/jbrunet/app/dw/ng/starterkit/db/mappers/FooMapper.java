@@ -1,6 +1,6 @@
-package fr.jbrunet.app.awesome.db.mappers;
+package fr.jbrunet.app.dw.ng.starterkit.db.mappers;
 
-import fr.jbrunet.app.awesome.pojos.Foo;
+import fr.jbrunet.app.dw.ng.starterkit.pojos.Foo;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 

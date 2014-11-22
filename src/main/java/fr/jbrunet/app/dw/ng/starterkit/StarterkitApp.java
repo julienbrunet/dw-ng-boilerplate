@@ -1,8 +1,7 @@
-package fr.jbrunet.app.awesome;
+package fr.jbrunet.app.dw.ng.starterkit;
 
-import fr.jbrunet.app.awesome.config.AwesomeAppConfiguration;
-import fr.jbrunet.app.awesome.db.FooDAO;
-import fr.jbrunet.app.awesome.resources.FooResource;
+import fr.jbrunet.app.dw.ng.starterkit.db.FooDAO;
+import fr.jbrunet.app.dw.ng.starterkit.resources.FooResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
@@ -15,20 +14,20 @@ import org.skife.jdbi.v2.DBI;
 /**
  * Created by Julien BRUNET on 23/09/2014.
  */
-public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
+public class StarterkitApp extends Application<StarterkitAppConfiguration> {
 
     public static void main(String[] args) throws Exception {
         //Start DropWizard Server
-        new AwesomeApplication().run(args);
+        new StarterkitApp().run(args);
     }
 
     @Override
-    public void initialize(Bootstrap<AwesomeAppConfiguration> bootstrap) {
+    public void initialize(Bootstrap<StarterkitAppConfiguration> bootstrap) {
         bootstrap.addBundle(new AssetsBundle("/client/", "/", "index.html"));
         //bootstrap.addBundle(new AssetsBundle());
-        bootstrap.addBundle(new MigrationsBundle<AwesomeAppConfiguration>() {
+        bootstrap.addBundle(new MigrationsBundle<StarterkitAppConfiguration>() {
             @Override
-            public DataSourceFactory getDataSourceFactory(AwesomeAppConfiguration configuration) {
+            public DataSourceFactory getDataSourceFactory(StarterkitAppConfiguration configuration) {
                 return configuration.getDataSourceFactory();
             }
         });
@@ -36,7 +35,7 @@ public class AwesomeApplication extends Application<AwesomeAppConfiguration> {
     }
 
     @Override
-    public void run(AwesomeAppConfiguration awesomeAppConfiguration, Environment environment) throws Exception {
+    public void run(StarterkitAppConfiguration awesomeAppConfiguration, Environment environment) throws Exception {
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, awesomeAppConfiguration.getDataSourceFactory(), "appDatabase");
 

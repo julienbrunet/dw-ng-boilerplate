@@ -1,8 +1,8 @@
-package fr.jbrunet.app.awesome.resources;
+package fr.jbrunet.app.dw.ng.starterkit.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import fr.jbrunet.app.awesome.db.FooDAO;
-import fr.jbrunet.app.awesome.pojos.Foo;
+import fr.jbrunet.app.dw.ng.starterkit.db.FooDAO;
+import fr.jbrunet.app.dw.ng.starterkit.pojos.Foo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
