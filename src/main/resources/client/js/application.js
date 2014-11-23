@@ -1,7 +1,9 @@
 'use strict';
-var app = angular.module('app', [   'ui.bootstrap','ui.router',
+var app = angular.module('app', [   'ui.router',
+                                    'ngMaterial',
                                     'app.controllers',
-                                    'app.services'
+                                    'app.services',
+                                    'app.directives'
                                  ]);
 
 app.constant(
