@@ -1,37 +1,43 @@
-<div layout="row" md-theme="blue-grey">
+<div layout="row">
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('md')">
-        <md-toolbar>
-            <h1 class="md-toolbar-tools">StarterKit Application</h1>
+        <md-toolbar class="md-tall" md-theme="default">
+            <h1 class="md-toolbar-tools">Starterkit Application</h1>
         </md-toolbar>
-        <md-content class="md-padding" ng-controller="LeftNavCtrl">
-            my menu
-            <ul>
-                <li>Welcome</li>
-                <li>CRUD Example</li>
-                <li>Chat</li>
-                <li>Administration</li>
-            </ul>
+        <md-content ng-controller="LeftNavCtrl">
+            <div layout="row" class="menu-item menu-title">
+                <i class="fa fa-home menu-icon"></i>
+                Welcome
+            </div>
+            <div layout="row" class="menu-item menu-title">
+                <i class="fa fa-list-alt menu-icon"></i>
+                UI Components
+            </div>
+            <div layout="row" class="menu-item menu-title">
+                <i class="fa fa-file-text-o menu-icon"></i>
+                CRUD Example
+            </div>
+            <div layout="row" class="menu-item menu-title">
+                <i class="fa fa-comments-o menu-icon"></i>
+                chat
+            </div>
         </md-content>
     </md-sidenav>
 
 
     <div layout="column" layout-fill >
-        <md-toolbar >
+        <md-toolbar>
 
             <div class="md-toolbar-tools">
 
                 <md-button class="menu-icon" hide="" show-phone="" show-tablet="" aria-label="Toggle Menu" ng-click="toggleLeft()">
-                    <md-icon icon="img/icons/ic_menu_24px.svg"/>
+                    <i class="fa fa-bars" style="font-size:24px; line-height:24px;color:white;"></i>
                 </md-button>
 
-                <span>StarterKit Application</span>
+                <span>Welcome</span>
 
                 <!-- fill up the space between left and right area -->
                 <span flex></span>
 
-                <md-button>
-                    Right Bar Button
-                </md-button>
             </div>
         </md-toolbar>
 
