@@ -11,18 +11,15 @@ ctrl.controller('SessionCtrl',
  }]);
 
 ctrl.controller('MainCtrl',
-                ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', '$timeout', '$mdSidenav', 'Auth',
-                function ($rootScope, $scope, $http, $location, $log, $cookieStore, $timeout, $mdSidenav, authSrv) {
+                ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', '$timeout', '$mdSidenav', '$state', 'Auth',
+                function ($rootScope, $scope, $http, $location, $log, $cookieStore, $timeout, $mdSidenav, $state, authSrv) {
 
-    $log.debug("MainCtrl");
+    $scope.screen = {};
+    $scope.screen.title = 'toto';
 
     $scope.toggleLeft = function() {
         $log.debug("open left");
         $mdSidenav('left').toggle();
-    };
-    $scope.toggleRight = function() {
-        $log.debug("open right");
-        $mdSidenav('right').toggle();
     };
 }]);
 

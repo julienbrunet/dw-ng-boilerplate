@@ -1,38 +1,18 @@
-<div class="nav navbar navbar-default navbar-custom">
-    <div id="open-menu" class="nav-button" ng-click="$rootScope.menuVisible = true">
-        <i class="fa fa-bars">&nbsp;</i>
-    </div>
-    <div class="screen-title">CRUD Foo</i></div>
+<div class="crud-list-wrapper">
+    <ul class="resp-list">
+        <li class="resp-list-item" ng-repeat="foo in foos" ng-click="displayDetails(foo)" >
+            <div class="left-block"><div class="foo-id">#{{foo.id}}</div></div>
+            <div class="content-block" ng-click="displayDetails('toto');">
+                <div class="primary-content-block">{{foo.label}}</div>
+                <div class="secondary-content-block">{{foo.description}}</div>
+            </div>
+        </li>
+    </ul>
 </div>
-<div id="content" class="dark-content">
-    <div class="header-push"></div>
 
-    <div class="crud-menu-wrapper">
-        All&nbsp;<i class="fa fa-caret-down"></i>
-        <div class="crud-add-wrapper">
-            <div class="crud-add-button">+</div>
-        </div>
-    </div>
-
-    <div class="crud-list-wrapper">
-        <ul class="resp-list">
-            <li class="resp-list-item" ng-repeat="foo in foos" ng-click="displayDetails(foo)" >
-                <div class="left-block"><div class="foo-id">#{{foo.id}}</div></div>
-                <div class="content-block" ng-click="displayDetails('toto');">
-                    <div class="primary-content-block">{{foo.label}}</div>
-                    <div class="secondary-content-block">{{foo.description}}</div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="crud-detail-wrapper">
-        {{selectedFoo.label}}
-    </div>
-
-
-    <div class="footer-push"></div>
+<div class="crud-detail-wrapper">
+    {{selectedFoo.label}}
 </div>
-<div id="footer">
-    <div ng-include="'partials/user/footer.html'"></div>
-</div>
+
+
+

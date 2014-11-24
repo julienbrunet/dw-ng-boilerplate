@@ -69,7 +69,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         })
         .state("user.home", {
             url:            "/",
-            templateUrl:    "partials/user/main.html",
+            templateUrl:    "partials/user/home.html",
             controller:     "",
             access:         access.user
         })
@@ -80,7 +80,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
             access:         access.user
         })
         .state("user.chat", {
-            url:            "/crud",
+            url:            "/chat",
             templateUrl:    "partials/user/chat.html",
             controller:     "",
             access:         access.user
@@ -88,6 +88,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         .state("user.profile", {
             url:            "/profile",
             templateUrl:    "partials/user/profile.html",
+                controller: "",
+            access:         access.user
+        })
+        .state("user.ui-demo", {
+            url:            "/ui-demo",
+            templateUrl:    "partials/user/ui-demo.html",
                 controller: "",
             access:         access.user
         });
