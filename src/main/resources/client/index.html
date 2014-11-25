@@ -40,25 +40,26 @@
         <!-- Side bar menu -->
         <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('md')">
             <md-content ng-controller="LeftNavCtrl">
-                <md-toolbar class="md-tall" md-theme="default">
+                <md-toolbar class="md-tall menu-sidenav" md-theme="default">
                     <h1 class="md-toolbar-tools">Starterkit Application</h1>
                 </md-toolbar>
 
-                <a ui-sref="user.home" layout="row" class="menu-item menu-title" >
-                    <i class="fa fa-home menu-icon"></i>
-                    Welcome
+                <a ui-sref="user.home" layout="row" md-theme="blue" class="menu-item menu-title" >
+                    <i class="fa fa-home menu-icon" style="color:#42a5f5;"></i>
+                    <span>Welcome</span>
                 </a>
+
                 <a ui-sref="user.ui-demo" layout="row" class="menu-item menu-title">
-                    <i class="fa fa-list-alt menu-icon"></i>
-                    UI Components Demo
+                    <i class="fa fa-list-alt menu-icon md-yellow-theme" style="color:#ffca28;"></i>
+                    <span>UI Components Demo</span>
                 </a>
                 <a ui-sref="user.crud" layout="row" class="menu-item menu-title">
-                    <i class="fa fa-file-text-o menu-icon"></i>
-                    CRUD Example
+                    <i class="fa fa-file-text-o menu-icon md-green-theme" style="color:#66bb6a;"></i>
+                    <span>CRUD Example</span>
                 </a>
                 <a ui-sref="user.chat" layout="row" class="menu-item menu-title">
-                    <i class="fa fa-comments-o menu-icon"></i>
-                    chat
+                    <i class="fa fa-comments-o menu-icon md-lime-theme"></i>
+                    <span>chat</span>
                 </a>
             </md-content>
         </md-sidenav>
