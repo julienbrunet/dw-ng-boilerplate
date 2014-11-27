@@ -90,12 +90,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
             templateUrl:    "partials/user/profile.html",
                 controller: "",
             access:         access.user
-        })
-        .state("user.ui-demo", {
-            url:            "/ui-demo",
-            templateUrl:    "partials/user/ui-demo.html",
-                controller: "",
-            access:         access.user
         });
 
 
