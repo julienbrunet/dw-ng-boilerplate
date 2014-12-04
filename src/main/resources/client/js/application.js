@@ -25,11 +25,38 @@ app.provider('routeAccess', ['userRoles', function(userRoles) {
         return this.data;
     };
 }]);
-
 app.constant("currentUser", {});
+
+app.factory('httpInterceptor', function ($q, $rootScope, $log) {
+    var numLoadings = 0;
+    return {
+        request: function (config) {
+            numLoadings++;
+            // Show loader
+            $rootScope.$broadcast("loader_show");
+            return config || $q.when(config)
+        },
+        response: function (response) {
+            if ((--numLoadings) === 0) {
+                // Hide loader
+                $rootScope.$broadcast("loader_hide");
+            }
+            return response || $q.when(response);
+        },
+        responseError: function (response) {
+            if (!(--numLoadings)) {
+                // Hide loader
+                $rootScope.$broadcast("loader_hide");
+            }
+            return $q.reject(response);
+        }
+    };
+});
 
 //configure routes
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'routeAccessProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, routeAccessProvider) {
+    $httpProvider.interceptors.push('httpInterceptor');
+
     var access = routeAccessProvider.data;
 
     // For any unmatched url, redirect to /404
@@ -70,7 +97,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         .state("user.home", {
             url:            "/",
             templateUrl:    "partials/user/home.html",
-            controller:     "",
+            controller:     "HomeCtrl",
             access:         access.user
         })
         .state("user.crud", {
@@ -84,11 +111,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
             templateUrl:    "partials/user/chat.html",
             controller:     "",
             access:         access.user
+
         })
         .state("user.profile", {
             url:            "/profile",
             templateUrl:    "partials/user/profile.html",
-                controller: "",
+            controller: "",
             access:         access.user
         });
 
@@ -109,7 +137,20 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
 
 app.run(['$rootScope', '$location', '$state', 'Auth', function ($rootScope, $location, $state, Auth) {
 
-    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+    $rootScope.common = {};
+    $rootScope.common.screen = {};
+    $rootScope.common.loading = false;
+
+    $rootScope.$on("loader_show", function () {
+        $rootScope.common.loading = true;
+    });
+    $rootScope.$on("loader_hide", function () {
+        $rootScope.common.loading = false;
+    });
+
+    $rootScope.$on("stateChangeStart", function (event, next, current) {
+
+        if(next.title) $rootScope.common.screen.title = next.title;
 
         if (!Auth.authorize(next.access)) { //If not authorized to see next page
             event.preventDefault();

@@ -41,15 +41,15 @@
                     <h3 class="md-toolbar-tools"><i class="fa fa-star" style="font-size:1.3em;color:#E57373;text-shadow: 0 0 6px #fff;"></i>&nbsp;Starterkit App</h3>
                 </md-toolbar>
 
-                <a ui-sref="user.home" layout="row" class="menu-item menu-title" >
+                <a ui-sref="user.home" layout="row" class="menu-item menu-title" ng-click="close()">
                     <i class="fa fa-home menu-icon" style="color:#42a5f5;"></i>
                     <span>Welcome</span>
                 </a>
-                <a ui-sref="user.crud" layout="row" class="menu-item menu-title">
+                <a ui-sref="user.crud" layout="row" class="menu-item menu-title" ng-click="close()">
                     <i class="fa fa-file-text-o menu-icon" style="color:#66bb6a;"></i>
                     <span>CRUD Example</span>
                 </a>
-                <a ui-sref="user.chat" layout="row" class="menu-item menu-title">
+                <a ui-sref="user.chat" layout="row" class="menu-item menu-title" ng-click="close()">
                     <i class="fa fa-comments-o menu-icon"></i>
                     <span>chat</span>
                 </a>
@@ -59,14 +59,19 @@
         <div layout="column" layout-fill>
             <md-toolbar>
                 <div class="md-toolbar-tools" ng-controller="MainCtrl">
+
                     <md-button class="menu-icon" hide="" show-phone="" show-tablet="" aria-label="Toggle Menu" ng-click="toggleLeft()">
                         <i class="fa fa-bars" style="font-size:24px; line-height:24px;color:white;"></i>
                     </md-button>
+                    <section ng-hide="common.loading">
+                        <span>{{common.screen.title}}</span>
+                        <!-- fill up the space between left and right area -->
+                        <span flex></span>
+                    </section>
+                    <section ng-show="common.loading" layout="row" layout-align="center center" flex>
+                        <img src="img/loader.gif" />
+                    </section>
 
-                    <span>{{screen.title}}</span>
-
-                    <!-- fill up the space between left and right area -->
-                    <span flex></span>
                 </div>
             </md-toolbar>
 

@@ -14,31 +14,28 @@ ctrl.controller('MainCtrl',
                 ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', '$timeout', '$mdSidenav', '$state', 'Auth',
                 function ($rootScope, $scope, $http, $location, $log, $cookieStore, $timeout, $mdSidenav, $state, authSrv) {
 
-    $scope.screen = {};
-    $scope.screen.title = 'toto';
-
     $scope.toggleLeft = function() {
-        $log.debug("open left");
         $mdSidenav('left').toggle();
     };
 }]);
 
 ctrl.controller('LeftNavCtrl', function($scope, $timeout, $mdSidenav) {
-  $scope.close = function() {
-    $mdSidenav('left').close();
-  };
+    $scope.close = function() {
+        $mdSidenav('left').close();
+    };
 })
 
-ctrl.controller('RightNavCtrl', function($scope, $timeout, $mdSidenav) {
-    $scope.close = function() {
-        $mdSidenav('right').close();
-    };
-});
+ctrl.controller('HomeCtrl',
+                ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', 'Auth',
+                function ($rootScope, $scope, $http, $location, $log, $cookieStore, authSrv) {
+    $rootScope.common.screen.title = "Home";
+
+}]);
 
 ctrl.controller('CrudCtrl',
                 ['$rootScope', '$scope', '$http', '$location', '$log', '$cookieStore', 'Auth',
                 function ($rootScope, $scope, $http, $location, $log, $cookieStore, authSrv) {
-    $log.debug("CrudCtrl");
+    $rootScope.common.screen.title = "CRUD Example";
 
     $http.get('api/foo?pageSize=50')
     .then(function(response){

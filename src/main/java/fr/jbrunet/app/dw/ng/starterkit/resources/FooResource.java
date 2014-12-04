@@ -62,6 +62,13 @@ public class FooResource {
             else offset = page.intValue();
         }
 
+        //Add a wait to simulate long loading time for the client
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return fooDAO.search(id, label, description, date, bool, offset, limit, order, new Boolean(desc));
     }
 }
